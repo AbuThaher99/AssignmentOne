@@ -1,94 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/Main"
+    android:background="@drawable/back"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".MainActivity2">
+    tools:context=".MainActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pizza_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/button_layout"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/EQtext"
-        android:layout_width="181dp"
-        android:layout_height="40dp"
-        android:background="@drawable/textview"
-        android:text="TextView"
-        android:textSize="18dp"
-        android:padding="5dp"
-        android:textAlignment="center"
-        android:translationY="-20dp" />
-
-    <RadioGroup
-        android:id="@+id/group"
-        android:layout_width="175dp"
+    <LinearLayout
+        android:id="@+id/button_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pizza_recycler">
 
-        android:background="@drawable/textview">
 
-        <RadioButton
-            android:id="@+id/R1"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/Finish"
+            style="@style/MyButtonStyle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="RadioButton"
-            android:translationX="40dp" />
+            android:onClick="finish"
+            android:text="Finish"
+            android:translationX="-80dp" />
 
-        <RadioButton
-            android:id="@+id/R2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="RadioButton"
-            android:translationX="40dp" />
+    </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/R3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="RadioButton"
-            android:translationX="40dp" />
-
-        <RadioButton
-            android:id="@+id/R4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="RadioButton"
-            android:translationX="40dp" />
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/Next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="next"
-        android:text="Next"
-        style="@style/MyButtonStyle"
-        android:translationX="120dp"
-        android:translationY="10dp"
-        android:visibility="invisible" />
-
-    <Button
-        android:id="@+id/check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/MyButtonStyle"
-        android:onClick="check"
-        android:text="Check"
-        android:translationX="-120dp"
-        android:translationY="-38dp" />
-
-    <Button
-        android:id="@+id/Finish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="finish"
-        style="@style/MyButtonStyle"
-        android:text="Finish"
-        android:visibility="invisible" />
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:translationY="-60dp"
+        app:srcCompat="@drawable/wel" />
+
     <TextView
         android:id="@+id/intro"
         android:layout_width="356dp"
