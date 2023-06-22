@@ -61,26 +61,33 @@ public class MainActivity2 extends AppCompatActivity {
         fin = findViewById(R.id.Finish);
         ch = findViewById(R.id.check);
         selectedItem = getIntent().getStringExtra("selected_item");
+
+
+
         if (selectedItem.equals("Hard")) {
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+            Gson gson = new Gson();
+            String str = prefs.getString("hardMath", "");
+            Math[] obj = gson.fromJson(str, Math[].class);
 
             recycler = findViewById(R.id.pizza_recycler);
-            double x[] = new double[Math.hardMath.length];
-            double y[] = new double[Math.hardMath.length];
-            String operation[] = new String[Math.hardMath.length];
-            double optionOne[] = new double[Math.hardMath.length];
-            double optionTwo[] = new double[Math.hardMath.length];
-            double optionThree[] = new double[Math.hardMath.length];
-            double optionFour[] = new double[Math.hardMath.length];
-            double answer[] = new double[Math.hardMath.length];
-            for(int i = 0 ;i<Math.hardMath.length;i++){
-                x[i] = Math.hardMath[i].getX();
-                y[i] = Math.hardMath[i].getY();
-                operation[i] = Math.hardMath[i].getOperation();
-                optionOne[i] = Math.hardMath[i].getOptionOne();
-                optionTwo[i] = Math.hardMath[i].getOptionetwo();
-                optionThree[i] = Math.hardMath[i].getOptionThree();
-                optionFour[i] = Math.hardMath[i].getOptionFour();
-                answer[i] = Math.hardMath[i].getAnswer();
+            double x[] = new double[obj.length];
+            double y[] = new double[obj.length];
+            String operation[] = new String[obj.length];
+            double optionOne[] = new double[obj.length];
+            double optionTwo[] = new double[obj.length];
+            double optionThree[] = new double[obj.length];
+            double optionFour[] = new double[obj.length];
+            double answer[] = new double[obj.length];
+            for(int i = 0 ;i<obj.length;i++){
+                x[i] = obj[i].getX();
+                y[i] = obj[i].getY();
+                operation[i] = obj[i].getOperation();
+                optionOne[i] = obj[i].getOptionOne();
+                optionTwo[i] = obj[i].getOptionetwo();
+                optionThree[i] = obj[i].getOptionThree();
+                optionFour[i] = obj[i].getOptionFour();
+                answer[i] = obj[i].getAnswer();
 
             }
 
@@ -89,24 +96,28 @@ public class MainActivity2 extends AppCompatActivity {
             recycler.setAdapter(adapter);
 
         } else if (selectedItem.equals("Easy")) {
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+            Gson gson = new Gson();
+            String str = prefs.getString("easyMath", "");
+            Math[] obj = gson.fromJson(str, Math[].class);
              recycler = findViewById(R.id.pizza_recycler);
-            double x[] = new double[Math.esayMath.length];
-            double y[] = new double[Math.esayMath.length];
-            String operation[] = new String[Math.esayMath.length];
-            double optionOne[] = new double[Math.esayMath.length];
-            double optionTwo[] = new double[Math.esayMath.length];
-            double optionThree[] = new double[Math.esayMath.length];
-            double optionFour[] = new double[Math.esayMath.length];
-            double answer[] = new double[Math.esayMath.length];
-            for(int i = 0 ;i<Math.esayMath.length;i++){
-                x[i] = Math.esayMath[i].getX();
-                y[i] = Math.esayMath[i].getY();
-                operation[i] = Math.esayMath[i].getOperation();
-                optionOne[i] = Math.esayMath[i].getOptionOne();
-                optionTwo[i] = Math.esayMath[i].getOptionetwo();
-                optionThree[i] = Math.esayMath[i].getOptionThree();
-                optionFour[i] = Math.esayMath[i].getOptionFour();
-                answer[i] = Math.esayMath[i].getAnswer();
+            double x[] = new double[obj.length];
+            double y[] = new double[obj.length];
+            String operation[] = new String[obj.length];
+            double optionOne[] = new double[obj.length];
+            double optionTwo[] = new double[obj.length];
+            double optionThree[] = new double[obj.length];
+            double optionFour[] = new double[obj.length];
+            double answer[] = new double[obj.length];
+            for(int i = 0 ;i<obj.length;i++){
+                x[i] = obj[i].getX();
+                y[i] = obj[i].getY();
+                operation[i] = obj[i].getOperation();
+                optionOne[i] = obj[i].getOptionOne();
+                optionTwo[i] = obj[i].getOptionetwo();
+                optionThree[i] = obj[i].getOptionThree();
+                optionFour[i] = obj[i].getOptionFour();
+                answer[i] = obj[i].getAnswer();
 
             }
 
